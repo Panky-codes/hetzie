@@ -24,7 +24,7 @@
   # boot.loader.grub.device = "/dev/sda"; # or "nodev" for efi only
   boot.loader.grub = {
     # no need to set devices, disko will add all devices that have a EF02 partition to the list already
-    devices = [ "/dev/vda" "/dev/vdb" ];
+  #  devices = [ ];
     efiSupport = true;
     efiInstallAsRemovable = true;
   };
