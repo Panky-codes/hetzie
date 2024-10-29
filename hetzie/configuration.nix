@@ -24,10 +24,11 @@
   # boot.loader.grub.device = "/dev/sda"; # or "nodev" for efi only
   boot.loader.grub = {
     # no need to set devices, disko will add all devices that have a EF02 partition to the list already
-    # devices = [ ];
+    devices = [ "/dev/vda" "/dev/vdb" ];
     efiSupport = true;
     efiInstallAsRemovable = true;
   };
+
 
   networking.hostName = "hetzie"; # Define your hostname.
   #networking.nameservers = [ "106.1.220.37" "106.110.13.105" "106.110.13.102" ];
