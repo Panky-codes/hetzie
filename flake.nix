@@ -5,6 +5,8 @@
     # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
     agenix.url = "github:ryantm/agenix";
+    disko.url = "github:nix-community/disko";
+    disko.inputs.nixpkgs.follows = "nixpkgs";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     home-manager = {
       url = "github:nix-community/home-manager/release-24.05";
@@ -18,6 +20,7 @@
       home-manager,
       agenix,
       nixos-hardware,
+      disko,
       ...
     }:
     {
@@ -29,6 +32,8 @@
           system = "x86_64-linux";
           modules = [
             agenix.nixosModules.default
+	    disko.nixosModules.disko
+	    ./hetzie/disk-config.nix
             ./hetzie/configuration.nix
             ./hetzie/age.nix
             { environment.systemPackages = [ agenix.packages.x86_64-linux.default ]; }
