@@ -29,6 +29,21 @@
     efiInstallAsRemovable = true;
   };
 
+  boot.kernelParams = [ "ip=dhcp" ];
+  boot.initrd = {
+    availableKernelModules = [ "r8169" ];
+    systemd.users.root.shell = "/bin/cryptsetup-askpass";
+    network = {
+      enable = true;
+      ssh = {
+        enable = true;
+        port = 22;
+        authorizedKeys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIB29alooj2OLxasPBR7D/kwRRwM97bDQxD6coicnDQpk p.raghav@samsung.com" ];
+        hostKeys = [ "/etc/secrets/initrd/ssh_host_rsa_key" ];
+        #ignoreEmptyHostKeys = true;
+      };
+    };
+  };
 
   networking.hostName = "hetzie"; # Define your hostname.
   #networking.nameservers = [ "106.1.220.37" "106.110.13.105" "106.110.13.102" ];
