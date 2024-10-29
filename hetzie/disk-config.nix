@@ -63,7 +63,7 @@
         #settings.keyFile = "/tmp/secret.key";
         content = {
           type = "filesystem";
-          format = "ext4";
+          format = "xfs";
           mountpoint = "/";
         };
       };
