@@ -32,8 +32,8 @@
           system = "x86_64-linux";
           modules = [
             agenix.nixosModules.default
-	    disko.nixosModules.disko
-	    ./hetzie/disk-config.nix
+            disko.nixosModules.disko
+            ./hetzie/disk-config.nix
             ./hetzie/configuration.nix
             ./hetzie/age.nix
             { environment.systemPackages = [ agenix.packages.x86_64-linux.default ]; }

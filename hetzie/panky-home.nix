@@ -35,8 +35,7 @@
       "gpg"
       "ssh"
     ];
-    keys = [
-    ];
+    keys = [ ];
   };
   programs.zsh = {
     enable = true;

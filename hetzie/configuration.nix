@@ -26,14 +26,19 @@
   # https://nixos.wiki/wiki/Remote_disk_unlocking
   boot.kernelParams = [ "ip=dhcp" ];
   boot.initrd = {
-    availableKernelModules = [ "r8169" "bnxt_en"];
+    availableKernelModules = [
+      "r8169"
+      "bnxt_en"
+    ];
     systemd.users.root.shell = "/bin/cryptsetup-askpass";
     network = {
       enable = true;
       ssh = {
         enable = true;
         port = 22;
-        authorizedKeys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIG7DQVc0xdPzziGOuFRSvgSRNDyYRn2+7s2K86YFmvq7 p.raghav@samsung.com" ];
+        authorizedKeys = [
+          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIG7DQVc0xdPzziGOuFRSvgSRNDyYRn2+7s2K86YFmvq7 p.raghav@samsung.com"
+        ];
         hostKeys = [ "/etc/secrets/initrd/ssh_host_rsa_key" ];
         #ignoreEmptyHostKeys = true;
       };
@@ -71,7 +76,6 @@
     ];
     hashedPassword = "$y$j9T$6ZmrGfiJ4YiqKG19C9cOh1$wSFZkYz1AyW/wNlaUcfphh/W9RUCvECJminXOmtI0xC";
   };
-
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
