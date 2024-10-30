@@ -1,8 +1,8 @@
 { lib, ... }:
 {
-  disko.devices.disk = lib.genAttrs [ "0" "1" ] (name: {
+  disko.devices.disk = lib.genAttrs [ "a" "b" ] (name: {
     type = "disk";
-    device = "/dev/nvme${name}n1";
+    device = "/dev/vd${name}";
     content = {
       type = "gpt";
       partitions = {
