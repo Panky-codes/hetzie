@@ -33,7 +33,7 @@
       ssh = {
         enable = true;
         port = 22;
-        authorizedKeys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIB29alooj2OLxasPBR7D/kwRRwM97bDQxD6coicnDQpk p.raghav@samsung.com" ];
+        authorizedKeys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIG7DQVc0xdPzziGOuFRSvgSRNDyYRn2+7s2K86YFmvq7 p.raghav@samsung.com" ];
         hostKeys = [ "/etc/secrets/initrd/ssh_host_rsa_key" ];
         #ignoreEmptyHostKeys = true;
       };
@@ -52,7 +52,7 @@
 
   users.users.root.openssh.authorizedKeys.keys = [
     # change this to your ssh key
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIB29alooj2OLxasPBR7D/kwRRwM97bDQxD6coicnDQpk p.raghav@samsung.com"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIG7DQVc0xdPzziGOuFRSvgSRNDyYRn2+7s2K86YFmvq7 p.raghav@samsung.com"
   ];
 
   users.users.panky = {
@@ -67,7 +67,7 @@
       "libvirtd"
     ];
     openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIB29alooj2OLxasPBR7D/kwRRwM97bDQxD6coicnDQpk p.raghav@samsung.com"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPwblMdqnsyQSWs75WM+zd7pVuxS7jKbE0XyIZCkAHdJ p.raghav@samsung.com"
     ];
     hashedPassword = "$y$j9T$6ZmrGfiJ4YiqKG19C9cOh1$wSFZkYz1AyW/wNlaUcfphh/W9RUCvECJminXOmtI0xC";
   };
