@@ -58,14 +58,9 @@
       type = "mdadm";
       level = 1;
       content = {
-        type = "luks";
-        name = "crypted";
-        #settings.keyFile = "/tmp/secret.key";
-        content = {
-          type = "filesystem";
-          format = "xfs";
-          mountpoint = "/";
-        };
+        type = "filesystem";
+        format = "xfs";
+        mountpoint = "/";
       };
     };
   };
