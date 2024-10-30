@@ -36,6 +36,7 @@
             ./hetzie/disk-config.nix
             ./hetzie/configuration.nix
             ./hetzie/age.nix
+            ./hetzie/users.nix
             { environment.systemPackages = [ agenix.packages.x86_64-linux.default ]; }
             home-manager.nixosModules.home-manager
             {
