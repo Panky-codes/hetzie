@@ -37,6 +37,14 @@
             ./hetzie/configuration.nix
             ./hetzie/age.nix
             { environment.systemPackages = [ agenix.packages.x86_64-linux.default ]; }
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+
+              home-manager.users.panky = import ./hetzie/panky-home.nix;
+            }
+
           ];
         };
       };

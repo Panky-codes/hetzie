@@ -16,19 +16,14 @@
   ];
 
   # Use the GRUB 2 boot loader.
-  #boot.loader.grub.enable = true;
-  # boot.loader.grub.efiSupport = true;
-  # boot.loader.grub.efiInstallAsRemovable = true;
-  # boot.loader.efi.efiSysMountPoint = "/boot/efi";
-  # Define on which hard drive you want to install Grub.
-  # boot.loader.grub.device = "/dev/sda"; # or "nodev" for efi only
   boot.loader.grub = {
     # no need to set devices, disko will add all devices that have a EF02 partition to the list already
-  #  devices = [ ];
+    # devices = [ ];
     efiSupport = true;
     efiInstallAsRemovable = true;
   };
 
+  # https://nixos.wiki/wiki/Remote_disk_unlocking
   boot.kernelParams = [ "ip=dhcp" ];
   boot.initrd = {
     availableKernelModules = [ "r8169" ];
@@ -46,10 +41,6 @@
   };
 
   networking.hostName = "hetzie"; # Define your hostname.
-  #networking.nameservers = [ "106.1.220.37" "106.110.13.105" "106.110.13.102" ];
-  # Pick only one of the below networking options.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  # networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
   # Set your time zone.
   time.timeZone = "Europe/Amsterdam";
@@ -63,6 +54,24 @@
     # change this to your ssh key
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIB29alooj2OLxasPBR7D/kwRRwM97bDQxD6coicnDQpk p.raghav@samsung.com"
   ];
+
+  users.users.panky = {
+    isNormalUser = true;
+    home = "/home/panky";
+    shell = pkgs.zsh;
+    ignoreShellProgramCheck = true;
+    description = "Pankaj";
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "libvirtd"
+    ];
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIB29alooj2OLxasPBR7D/kwRRwM97bDQxD6coicnDQpk p.raghav@samsung.com"
+    ];
+    hashedPassword = "$y$j9T$6ZmrGfiJ4YiqKG19C9cOh1$wSFZkYz1AyW/wNlaUcfphh/W9RUCvECJminXOmtI0xC";
+  };
+
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -87,6 +96,8 @@
   # };
 
   # List services that you want to enable:
+
+  virtualisation.libvirtd.enable = true;
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
