@@ -26,7 +26,7 @@
   # https://nixos.wiki/wiki/Remote_disk_unlocking
   boot.kernelParams = [ "ip=dhcp" ];
   boot.initrd = {
-    availableKernelModules = [ "r8169" ];
+    availableKernelModules = [ "r8169" "bnxt_en"];
     systemd.users.root.shell = "/bin/cryptsetup-askpass";
     network = {
       enable = true;
