@@ -28,7 +28,7 @@
   boot.initrd = {
     availableKernelModules = [
       "r8169"
-      "bnxt_en"
+      "bnxt_en" # This server has broadcom network card.
     ];
     systemd.users.root.shell = "/bin/cryptsetup-askpass";
     network = {
@@ -40,14 +40,15 @@
           "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIG7DQVc0xdPzziGOuFRSvgSRNDyYRn2+7s2K86YFmvq7 p.raghav@samsung.com"
         ];
         hostKeys = [ "/etc/secrets/initrd/ssh_host_rsa_key" ];
+	# Enable this while bootstraping the system before adding the
+        # ssh_host_rsa_key while installation.
         #ignoreEmptyHostKeys = true;
       };
     };
   };
 
-  networking.hostName = "hetzie"; # Define your hostname.
+  networking.hostName = "hetzie";
 
-  # Set your time zone.
   time.timeZone = "Europe/Amsterdam";
 
   nix.settings.experimental-features = [
@@ -73,14 +74,6 @@
     dates = "weekly";
     options = "--delete-older-than 7d";
   };
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
 
   # List services that you want to enable:
 
