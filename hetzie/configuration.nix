@@ -38,9 +38,11 @@
         port = 22;
         authorizedKeys = [
           "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIG7DQVc0xdPzziGOuFRSvgSRNDyYRn2+7s2K86YFmvq7 p.raghav@samsung.com"
+          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDoXHJ/4j7kIHmMtLMmqSusvcJpTYUsRp8mZM6QV3HE4 aeh@aeh-pocket"
+          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMImV6kLnytXQt6l1alTWOnOuu9+fvkTyjOyReVNcUx1 Daniel Gomez"
         ];
         hostKeys = [ "/etc/secrets/initrd/ssh_host_rsa_key" ];
-	# Enable this while bootstraping the system before adding the
+        # Enable this while bootstraping the system before adding the
         # ssh_host_rsa_key while installation.
         #ignoreEmptyHostKeys = true;
       };
