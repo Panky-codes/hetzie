@@ -58,10 +58,7 @@
     "flakes"
   ];
 
-  users.users.root.openssh.authorizedKeys.keys = [
-    # change this to your ssh key
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIG7DQVc0xdPzziGOuFRSvgSRNDyYRn2+7s2K86YFmvq7 p.raghav@samsung.com"
-  ];
+  nix.settings.trusted-users = [ "root" "@wheel" ];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -88,7 +85,7 @@
     settings = {
       PasswordAuthentication = false;
       X11Forwarding = false;
-      PermitRootLogin = "prohibit-password"; # "yes", "without-password", "prohibit-password", "forced-commands-only", "no"
+      PermitRootLogin = "no"; # "yes", "without-password", "prohibit-password", "forced-commands-only", "no"
     };
   };
 
