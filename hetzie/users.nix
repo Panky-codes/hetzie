@@ -21,6 +21,7 @@
     isNormalUser = true;
     home = "/home/andreas";
     shell = pkgs.zsh;
+    linger = true;
     description = "Andreas";
     extraGroups = [
       "networkmanager"
