@@ -99,6 +99,12 @@
   programs.mosh.enable = true;
   programs.zsh.enable = true;
 
+  # Use nftables rather than iptables
+  networking.nftables = {
+    enable = true;
+    flushRuleset = true;
+  };
+
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
