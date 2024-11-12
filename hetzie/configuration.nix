@@ -89,7 +89,11 @@
     };
   };
 
-  services.fail2ban.enable = true;
+  services.fail2ban = {
+    enable = true;
+    bantime = "7d";
+  };
+
   programs.mosh.enable = true;
   programs.zsh.enable = true;
 
