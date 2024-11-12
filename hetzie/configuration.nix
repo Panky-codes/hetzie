@@ -82,6 +82,7 @@
   services.openssh = {
     enable = true;
     ports = [ 718 ];
+    openFirewall = true;
     settings = {
       PasswordAuthentication = false;
       X11Forwarding = false;
