@@ -20,6 +20,7 @@
   users.users.andreas = {
     isNormalUser = true;
     home = "/home/andreas";
+    shell = pkgs.zsh;
     description = "Andreas";
     extraGroups = [
       "networkmanager"

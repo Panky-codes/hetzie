@@ -91,6 +91,7 @@
 
   services.fail2ban.enable = true;
   programs.mosh.enable = true;
+  programs.zsh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
