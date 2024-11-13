@@ -38,3 +38,11 @@ $ nixos-generate-config --show-hardware-config --no-filesystems > hetzie/hardwar
 $ nixos-install --flake .#hetzie
 ```
 - Reboot
+
+## How to decrypt the secrets:
+```
+$ #Encrypt
+$ agenix -e priv_pass.age
+$ #Decrypt
+$ agenix -d priv_pass.age -i <your-ssh-key-used-for-login>
+```
