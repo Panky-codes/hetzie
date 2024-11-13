@@ -94,6 +94,9 @@
     enable = true;
     maxretry = 3;
     bantime = "7d";
+    ignoreIP = [
+      "79.142.230.34" # Andreas
+    ];
   };
 
   programs.mosh.enable = true;
