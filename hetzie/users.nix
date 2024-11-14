@@ -17,9 +17,9 @@
     hashedPassword = "$y$j9T$6ZmrGfiJ4YiqKG19C9cOh1$wSFZkYz1AyW/wNlaUcfphh/W9RUCvECJminXOmtI0xC";
   };
 
-  users.users.andreas = {
+  users.users.aeh = {
     isNormalUser = true;
-    home = "/home/andreas";
+    home = "/home/aeh";
     shell = pkgs.zsh;
     linger = true;
     description = "Andreas";
