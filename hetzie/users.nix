@@ -48,4 +48,19 @@
     ];
     hashedPassword = "$y$j9T$6ZmrGfiJ4YiqKG19C9cOh1$wSFZkYz1AyW/wNlaUcfphh/W9RUCvECJminXOmtI0xC";
   };
+
+  users.users.joel = {
+    isNormalUser = true;
+    home = "/home/joel";
+    description = "Joel";
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "libvirtd"
+    ];
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEQ4FAhdMKtiMdBDZytTaO7i6YUJYDmoYNMWx2j4nDUP j.granados@samsung.com"
+    ];
+    hashedPassword = "$y$j9T$6ZmrGfiJ4YiqKG19C9cOh1$wSFZkYz1AyW/wNlaUcfphh/W9RUCvECJminXOmtI0xC";
+  };
 }
