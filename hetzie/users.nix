@@ -52,7 +52,9 @@
   users.users.joel = {
     isNormalUser = true;
     home = "/home/joel";
+    shell = pkgs.zsh;
     description = "Joel";
+    packages = [ pkgs.git ];
     extraGroups = [
       "networkmanager"
       "wheel"
