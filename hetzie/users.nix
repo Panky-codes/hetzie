@@ -13,6 +13,7 @@
     ];
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPwblMdqnsyQSWs75WM+zd7pVuxS7jKbE0XyIZCkAHdJ p.raghav@samsung.com"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOnoGxq1zp2ZEPRC2gc9WTJdXisLVbjtoIp2vLZuRQew pankydev8@gmail.com"
     ];
     hashedPassword = "$y$j9T$6ZmrGfiJ4YiqKG19C9cOh1$wSFZkYz1AyW/wNlaUcfphh/W9RUCvECJminXOmtI0xC";
   };
