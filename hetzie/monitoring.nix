@@ -5,9 +5,12 @@
     services = {
       grafana = {
         enable = true;
-        settings.server = {
-          http_port = 80;
-          http_addr = "127.0.0.1";
+        settings = {
+          server = {
+            http_port = 80;
+            http_addr = "127.0.0.1";
+          };
+          "auth.anonymous".enabled = true;
         };
       };
       prometheus = {
