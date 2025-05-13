@@ -97,6 +97,7 @@
     bantime = "7d";
     ignoreIP = [
       "79.142.230.34" # Andreas
+      "194.62.217.67" # SOHO
     ];
   };
 
