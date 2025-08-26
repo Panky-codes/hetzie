@@ -53,4 +53,17 @@
     hashedPassword =
       "$y$j9T$6ZmrGfiJ4YiqKG19C9cOh1$wSFZkYz1AyW/wNlaUcfphh/W9RUCvECJminXOmtI0xC";
   };
+
+  users.users.mads = {
+    isNormalUser = true;
+    home = "/home/mads";
+    shell = pkgs.zsh;
+    description = "Mads";
+    extraGroups = [ "libvirtd" ];
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIE3UauP7wGBCagEkknF341Zp2VTfmGDQgPTs0fRsoSvH Mads"
+    ];
+    hashedPassword =
+      "$y$j9T$6ZmrGfiJ4YiqKG19C9cOh1$wSFZkYz1AyW/wNlaUcfphh/W9RUCvECJminXOmtI0xC";
+  };
 }
