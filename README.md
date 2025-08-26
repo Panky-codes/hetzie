@@ -46,3 +46,13 @@ $ agenix -e priv_pass.age
 $ #Decrypt
 $ agenix -d priv_pass.age -i <your-ssh-key-used-for-login>
 ```
+
+## How to boot
+
+After reboot, server will load the kernel but pause boot process to get root LUKS password. SSH to server on port 22 and provide password by running
+
+```
+cryptsetup-askpass
+```
+
+Server will terminate ssh connection and continue boot afterwards.
