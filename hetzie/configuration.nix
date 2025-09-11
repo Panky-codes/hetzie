@@ -2,12 +2,7 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}:
+{ config, lib, pkgs, ... }:
 
 {
   imports = [
@@ -54,10 +49,7 @@
 
   time.timeZone = "Europe/Amsterdam";
 
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   nix.settings.trusted-users = [ "root" "@wheel" ];
 
@@ -87,7 +79,8 @@
     settings = {
       PasswordAuthentication = false;
       X11Forwarding = false;
-      PermitRootLogin = "no"; # "yes", "without-password", "prohibit-password", "forced-commands-only", "no"
+      PermitRootLogin =
+        "no"; # "yes", "without-password", "prohibit-password", "forced-commands-only", "no"
     };
   };
 
