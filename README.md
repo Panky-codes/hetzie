@@ -56,3 +56,17 @@ cryptsetup-askpass
 ```
 
 Server will terminate ssh connection and continue boot afterwards.
+
+## Fail2ban
+
+List banned IPs:
+
+```
+fail2ban-client banned
+```
+
+Unban someone:
+
+```
+fail2ban-client unban 212.60.126.184
+```
