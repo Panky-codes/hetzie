@@ -19,6 +19,9 @@
     efiInstallAsRemovable = true;
   };
 
+  # Select kernel version
+  boot.kernelPackages = pkgs.linuxPackages_6_16;
+
   # https://nixos.wiki/wiki/Remote_disk_unlocking
   boot.kernelParams = [ "ip=dhcp" ];
   boot.initrd = {
