@@ -59,7 +59,7 @@
     home = "/home/mads";
     shell = pkgs.zsh;
     description = "Mads";
-    extraGroups = [ "libvirtd" ];
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIE3UauP7wGBCagEkknF341Zp2VTfmGDQgPTs0fRsoSvH Mads"
     ];
