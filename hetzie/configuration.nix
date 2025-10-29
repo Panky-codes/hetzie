@@ -99,6 +99,7 @@
 
   programs.mosh.enable = true;
   programs.zsh.enable = true;
+  programs.nix-ld.enable = true;
 
   # Use nftables rather than iptables
   networking.nftables = {
