@@ -5,6 +5,7 @@
     # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
     agenix.url = "github:ryantm/agenix";
+    vscode-server.url = "github:nix-community/nixos-vscode-server";
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
   };
@@ -14,6 +15,7 @@
       nixpkgs,
       agenix,
       disko,
+      vscode-server,
       ...
     }:
     {
@@ -31,6 +33,10 @@
             ./hetzie/age.nix
             ./hetzie/users.nix
             { environment.systemPackages = [ agenix.packages.x86_64-linux.default ]; }
+	    vscode-server.nixosModules.default
+	    ({ config, pkgs, ... }: {
+		    services.vscode-server.enable = true;
+	    })
           ];
         };
       };
