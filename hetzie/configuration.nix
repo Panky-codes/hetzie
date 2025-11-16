@@ -73,6 +73,7 @@
   # List services that you want to enable:
 
   virtualisation.libvirtd.enable = true;
+  virtualisation.docker.enable = true;
 
   # Enable the OpenSSH daemon.
   services.openssh = {
